@@ -211,6 +211,9 @@ RCT_EXPORT_METHOD(requestAuthorization)
       if ([_locationManager respondsToSelector:@selector(setAllowsBackgroundLocationUpdates:)]) {
         [_locationManager setAllowsBackgroundLocationUpdates:YES];
       }
+      if ([_locationManager respondsToSelector:@selector(setPausesLocationUpdatesAutomatically:)]) {
+        [_locationManager setPausesLocationUpdatesAutomatically:NO];
+      }
     }
   } else if ([[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationWhenInUseUsageDescription"] &&
     [_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
